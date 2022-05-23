@@ -1,0 +1,27 @@
+[alias]
+    co   = checkout
+    cob  = checkout -b
+    cm   = commit -m
+    st   = status
+    br   = branch
+
+    # Followed by <file> unstages the file from the commit
+    us   = reset HEAD
+
+    # Undo the last commit
+    undo = reset --soft HEAD^
+
+    # Publish a new branch
+    pub  = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+
+    # Pretty print commit logs
+    lg   = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[user]
+    name = Rodrigo Moran
+    email = rmoran@ipponusa.com
+[core]
+	excludesfile = ~/.gitignore
+[pull]
+	rebase = true
+[init]
+    defaultBranch = main
