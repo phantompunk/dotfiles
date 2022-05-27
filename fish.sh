@@ -33,14 +33,13 @@ install functions/bass.fish ~/.config/fish/functions
 # Configure Kubernetes
 install functions/kubectx.fish ~/.config/fish/functions
 install functions/kubens.fish ~/.config/fish/functions
-/usr/local/bin/fish -c 'install functions/kubernetes.fish'
 
 # Configure Python
 install functions/python.fish ~/.config/fish/functions
 install functions/pip.fish ~/.config/fish/functions
 
 # Configure Abbrieviations
-/usr/local/bin/fish -c 'abbrs.sh'
+/bin/bash -c './abbrs.sh'
 
 # Configure Go-lang
-/usr/local/bin/fish -c 'go.sh'
+/bin/bash -c './go.sh'
