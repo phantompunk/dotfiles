@@ -1,4 +1,4 @@
 #!/bin/bash
 
-ln -sf $PWD/.gitconfig $HOME
-ln -sf $PWD/.gitignore $HOME
+ln -sf $PWD/dotfiles/.gitconfig $HOME
+ln -sf $PWD/.dotfiles/.gitignore $HOME

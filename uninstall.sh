@@ -24,3 +24,5 @@ rm -rf ~/.config/fish/
 echo "Restoring default Terminal settings."
 defaults write com.apple.terminal "Default Window Settings" -string "Basic"
 defaults write com.apple.terminal "Startup Window Settings" -string "Basic"
+
+sudo rm -rf /usr/local/Frameworks /usr/local/Homebrew /usr/local/aws-cli
