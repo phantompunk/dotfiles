@@ -18,4 +18,4 @@ if ! [ -x "$(command -v go)" ];
 then
     echo "Installing Go Lang";
     brew install go;
-fi
+end;

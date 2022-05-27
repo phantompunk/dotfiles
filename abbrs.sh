@@ -1,5 +1,9 @@
 #!/usr/bin/env fish
 
+abbr g 'git'
+abbr ls 'exa -la'
+
+##
 abbr k 'kubectl'
 abbr ktx 'kubectx'
 abbr kubens 'kubens'
