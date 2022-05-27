@@ -27,8 +27,7 @@ install functions/fish_prompt.fish ~/.config/fish/functions
 
 
 # Configure Bass
-# curl -sL https://raw.githubusercontent.com/edc/bass/master/functions/__bass.py -o ~/.config/fish/functions/__bass.py
-install functions/__bass.py ~/.config/fish/functions
+curl -sL https://raw.githubusercontent.com/edc/bass/master/functions/__bass.py -o ~/.config/fish/functions/__bass.py
 install functions/bass.fish ~/.config/fish/functions
 
 # Configure Kubernetes
