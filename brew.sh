@@ -7,6 +7,13 @@ then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
 fi
 
+if ! [ -x "$(command -v brew)" ];
+then
+    echo "Adding Homebrew to PATH";
+    echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 # Make sure to update Homebrew to the latest version
 brew update
 
