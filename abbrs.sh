@@ -3,7 +3,7 @@
 abbr g 'git'
 abbr ls 'exa -la'
 
-##
+# Add abbrieviations
 abbr k 'kubectl'
 abbr ktx 'kubectx'
 abbr kubens 'kubens'

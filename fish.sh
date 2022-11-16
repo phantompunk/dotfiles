@@ -31,6 +31,7 @@ curl -sL https://raw.githubusercontent.com/edc/bass/master/functions/__bass.py -
 install functions/bass.fish ~/.config/fish/functions
 
 # Configure Kubernetes
+install functions/kubectl.fish ~/.config/fish/functions
 install functions/kubectx.fish ~/.config/fish/functions
 install functions/kubens.fish ~/.config/fish/functions
 
