@@ -7,6 +7,10 @@ This project contains dotfiles for my personal configrations tailored to my pref
 | 🚧 Use at your risk! |
 |----------------------|
 
+```shell
+curl -Lks https://tinyurl.com/84k9tcjc | /bin/bash
+```
+
 ## Features
 - Install essentials via Homebrew
 - Leverages the Fish Shell
