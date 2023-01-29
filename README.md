@@ -18,7 +18,7 @@ Batteries included shell script walking you through the install options.
 | ----------------------------------------------------------- |
 
 ```shell
-bash <(curl -Lks https://example.com/Ge3Kn)
+bash <(curl -Lks https://bit.ly/phpnk-install)
 ```
 
 *Complete bash script stored in gist - [gist.github.com/phantompunk/init.sh](https://gist.github.com/phantompunk/d9a9df62e0330663cead308cbfb7803f)*
