@@ -4,7 +4,7 @@ Intended to provide a friendly crossplatform expierence using Fish, Kitty, and H
 
 
 
-> A mashup of ideas from various sources such [zellwk](https://github.com/zellwk/dotfiles), [mathiasbynens](https://github.com/mathiasbynens/dotfiles), [rkalis](https://github.com/rkalis/dotfiles), and [durdn](https://bitbucket.org/durdn/cfg.git). The structure for these dotfiles is from durdn's great write up on [dotfiles](https://www.atlassian.com/git/tutorials/dotfiles).
+> A mashup of ideas from various sources such [zellwk](https://github.com/zellwk/dotfiles), [sobolevn](https://github.com/sobolevn/dotfiles), [mathiasbynens](https://github.com/mathiasbynens/dotfiles), [rkalis](https://github.com/rkalis/dotfiles), and [durdn](https://bitbucket.org/durdn/cfg.git). The structure for these dotfiles is from durdn's great write up on [dotfiles](https://www.atlassian.com/git/tutorials/dotfiles).
 
 
 
