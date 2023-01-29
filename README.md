@@ -45,7 +45,7 @@ This repo contains files in the exact location as if they lived in my home direc
 
 For fresh installs there are a few requirements.
 
-All platforms need `git`,`curl`, and `nvim`.
+All platforms need `git`, `curl`, and `nvim`.
 
 ### MacOS
 
@@ -65,6 +65,18 @@ apt install -y build-essential
 
 
 
+## Usage
+
+```shell
+touch ~/.vimrc
+config status
+config add ~/.vimrc
+config commit -m "fix: update vim settings"
+config push
+```
+
+
+
 ## :hammer_and_wrench: Toolset
 
 My current favorite tools I expect on every machine I use:
@@ -80,5 +92,4 @@ My current favorite tools I expect on every machine I use:
 1. **[bat](https://github.com/sharkdp/bat)** - A cat clone with syntax highlighting
 
 2. **[exa](https://github.com/ogham/exa)** - A ls replacement with hightlighting
-
 
