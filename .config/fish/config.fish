@@ -4,3 +4,7 @@ end
 
 # Created by `pipx` on 2022-08-15 09:46:54
 set PATH $PATH /Users/rodrigomoran/.local/bin
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/rodrigomoran/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
