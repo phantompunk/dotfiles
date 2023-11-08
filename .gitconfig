@@ -20,11 +20,11 @@
     name = Rodrigo Moran
     email = rigo.moran0@gmail.com
 [core]
-	excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    excludesfile = ~/.gitignore
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [pull]
-	rebase = true
+    rebase = true
 [init]
     defaultBranch = main
 [interactive]
-	diffFilter = diff-so-fancy --patch
+    diffFilter = diff-so-fancy --patch
