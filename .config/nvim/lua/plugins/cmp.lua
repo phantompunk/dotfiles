@@ -2,7 +2,7 @@ return {
   -- Autocompletion
   'hrsh7th/nvim-cmp',
   dependencies = {
-   -- Snippet Engine & its associated nvim-cmp source
+    -- Snippet Engine & its associated nvim-cmp source
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
 
@@ -20,6 +20,12 @@ return {
     local luasnip = require 'luasnip'
     require('luasnip.loaders.from_vscode').lazy_load()
     luasnip.config.setup {}
+
+    local has_words_before = function()
+      if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
+      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+      return col ~= 0 and vim.api.nvim_buf_get_text(0, line-1, 0, line-1, col, {})[1]:match("^%s*$") == nil
+    end
 
     cmp.setup {
       snippet = {
@@ -41,8 +47,8 @@ return {
           select = true,
         },
         ['<Tab>'] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
+          if cmp.visible() and has_words_before() then
+            cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
           elseif luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump()
           else
@@ -61,9 +67,10 @@ return {
       },
       sources = {
         { name = 'nvim_lsp' },
+        { name = "copilot" },
         { name = 'luasnip' },
         { name = 'path' },
       },
     }
-  end
+  end,
 }
