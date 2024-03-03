@@ -1,22 +1,26 @@
 return {
-   -- LSP Configuration & Plugins
-   'neovim/nvim-lspconfig',
-   dependencies = {
-     -- Automatically install LSPs to stdpath for neovim
-     { 'williamboman/mason.nvim', config = true },
-     'williamboman/mason-lspconfig.nvim',
+  -- LSP Configuration & Plugins
+  'neovim/nvim-lspconfig',
+  dependencies = {
+    -- Automatically install LSPs to stdpath for neovim
+    { 'williamboman/mason.nvim', config = true },
+    'williamboman/mason-lspconfig.nvim',
 
-     -- Useful status updates for LSP
-     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-     { 'j-hui/fidget.nvim', opts = {} },
+    -- Useful status updates for LSP
+    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+    { 'j-hui/fidget.nvim', opts = {} },
 
-     -- Additional lua configuration, makes nvim stuff amazing!
-     'folke/neodev.nvim',
-   },
+    -- Additional lua configuration, makes nvim stuff amazing!
+    'folke/neodev.nvim',
+  },
   config = function()
     -- [[ Configure LSP ]]
     --  This function gets run when an LSP connects to a particular buffer.
-    local on_attach = function(_, bufnr)
+    local on_attach = function(client, bufnr)
+      if client.name == 'ruff_lsp' then
+        -- Disable hover in favor of Pyright
+        client.server_capabilities.hoverProvider = false
+      end
       -- NOTE: Remember that lua is a real programming language, and as such it is possible
       -- to define small helper and utility functions so you don't have to repeat yourself
       -- many times.
@@ -33,6 +37,7 @@ return {
 
       nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
       nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+      nmap('<leader>cf', vim.lsp.buf.format, '[C]ode [F]ormat')
 
       nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
       nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -75,7 +80,17 @@ return {
     local servers = {
       -- clangd = {},
       -- gopls = {},
-      pyright = {},
+      pyright = {
+        -- Using Ruff's import organizer
+        disableOrganizeImports = true,
+        python = {
+          analysis = {
+            ignore = { '*' },
+          },
+        },
+      },
+
+      ruff_lsp = {},
       -- rust_analyzer = {},
       -- tsserver = {},
       -- html = { filetypes = { 'html', 'twig', 'hbs'} },
@@ -114,6 +129,5 @@ return {
         }
       end,
     }
-
-  end
+  end,
 }

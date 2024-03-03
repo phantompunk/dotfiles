@@ -21,24 +21,24 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup("plugins")
+require('lazy').setup('plugins')
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
-vim.o.relativenumber = true   -- Lines numbers are relative to cursor
-vim.o.tabstop = 2             -- Number of spaces that tab uses
-vim.o.softtabstop = 2         -- Number of spaces that tab uses in insert mode
-vim.o.shiftwidth = 2          -- Number of spaces used for auto indent
-vim.o.expandtab = true        -- Insert spaces instead of tab
-vim.o.wrap = false            -- Disable line wrapping
-vim.o.incsearch = true        -- Enable incremental search
-vim.o.scrolloff = 8           -- Minimum number of lines above or below cusor
-vim.o.hlsearch = false        -- Set highlight on search
-vim.wo.number = true          -- Make line numbers default
-vim.o.mouse = 'a'             -- Enable mouse mode
-vim.o.breakindent = true      -- Enable break indent
-vim.o.undofile = true         -- Save undo history
-vim.o.termguicolors = true    -- Make sure your terminal supports this
+vim.o.relativenumber = true -- Lines numbers are relative to cursor
+vim.o.tabstop = 2           -- Number of spaces that tab uses
+vim.o.softtabstop = 2       -- Number of spaces that tab uses in insert mode
+vim.o.shiftwidth = 2        -- Number of spaces used for auto indent
+vim.o.expandtab = true      -- Insert spaces instead of tab
+vim.o.wrap = false          -- Disable line wrapping
+vim.o.incsearch = true      -- Enable incremental search
+vim.o.scrolloff = 8         -- Minimum number of lines above or below cusor
+vim.o.hlsearch = false      -- Set highlight on search
+vim.wo.number = true        -- Make line numbers default
+vim.o.mouse = 'a'           -- Enable mouse mode
+vim.o.breakindent = true    -- Enable break indent
+vim.o.undofile = true       -- Save undo history
+vim.o.termguicolors = true  -- Make sure your terminal supports this
 --vim.wo.signcolumn = 'yes'     -- Keep signcolumn on by default
 --vim.opt.colorcolumn = "80"    -- Vertical ruler highlights column
 
@@ -55,21 +55,21 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- [[ Basic Keymaps ]]
 
-vim.keymap.set("v", "∆", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "˚", ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', '∆', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', '˚', ":m '<-2<CR>gv=gv")
 
 -- keep cursor in the middle when jump up/down
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- keep next search term in th middle
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- yank to os clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+y")
+vim.keymap.set('n', '<leader>y', '"+y')
+vim.keymap.set('v', '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>Y', '"+y')
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -97,3 +97,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+vim.api.nvim_create_autocmd('BufWritePre', {
+  buffer = vim.fn.bufnr(),
+  callback = function()
+    vim.lsp.buf.format { timeout_ms = 3000 }
+  end,
+})
