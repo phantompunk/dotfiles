@@ -82,12 +82,12 @@ return {
       -- gopls = {},
       pyright = {
         -- Using Ruff's import organizer
-        disableOrganizeImports = true,
-        python = {
-          analysis = {
-            ignore = { '*' },
-          },
-        },
+        -- disableOrganizeImports = true,
+        -- python = {
+        --   analysis = {
+        --     ignore = { '*' },
+        --   },
+        -- },
       },
 
       ruff_lsp = {},
