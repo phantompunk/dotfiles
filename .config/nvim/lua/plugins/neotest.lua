@@ -13,6 +13,11 @@ return {
     -- The adapter will then be automatically loaded with the config.
     adapters = {
       ["neotest-python"] = {
+        dap = {
+          justMyCode = false,
+          console = "integratedTerminal",
+        },
+        args = { "--log-level", "DEBUG" },
         runner = "pytest",
       }
     },
@@ -78,5 +83,6 @@ return {
     { "<leader>to", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
     { "<leader>tO", function() require("neotest").output_panel.toggle() end,                            desc = "Toggle Output Panel" },
     { "<leader>tS", function() require("neotest").run.stop() end,                                       desc = "Stop" },
+    { "<leader>tM", function() require("neotest").run.run({ strategy = 'dap' }) end,                    desc = "Run Nearest in Debug" },
   },
 }
