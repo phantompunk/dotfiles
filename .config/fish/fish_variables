@@ -14,7 +14,7 @@ SETUVAR _fish_abbr_kg:kubectl\x20get
 SETUVAR _fish_abbr_kgp:kubectl\x20get\x20pods
 SETUVAR _fish_abbr_ktx:kubectx
 SETUVAR _fish_abbr_kubens:kubens
-SETUVAR _fish_abbr_ls:exa\x20\x2dla
+SETUVAR _fish_abbr_ls:eza\x20\x2dla
 SETUVAR _fish_abbr_tmf:cd\x20\x7e/Workspace/tmf
 SETUVAR fish_color_autosuggestion:555
 SETUVAR fish_color_cancel:\x2d\x2dreverse
@@ -55,5 +55,5 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dreverse
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/Applications/SnowSQL\x2eapp/Contents/MacOS\x1e/Users/rodrigomoran/go/bin\x1e/Users/rodrigomoran/\x2ecargo/bin
+SETUVAR fish_user_paths:/opt/homebrew/bin\x1e/Applications/SnowSQL\x2eapp/Contents/MacOS\x1e/Users/rodrigomoran/go/bin\x1e/Users/rodrigomoran/\x2ecargo/bin
 SETUVAR --export theme:dark
