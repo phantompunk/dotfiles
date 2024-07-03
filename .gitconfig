@@ -17,8 +17,7 @@
     # Pretty print commit logs
     lg   = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [user]
-    name = Rodrigo Moran
-    email = rigo.moran0@gmail.com
+
 [core]
     excludesfile = ~/.gitignore
     pager = diff-so-fancy | less --tabs=4 -RFX
