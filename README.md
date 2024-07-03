@@ -18,7 +18,20 @@ Batteries included shell script walking you through the install options.
 | ----------------------------------------------------------- |
 
 ```shell
-bash <(curl -Lks https://bit.ly/phpnk-install)
+git clone --bare https://github.com/phantompunk/dotfiles.git $HOME/.cfg
+function config {
+   /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
+}
+mkdir -p .config-backup
+config checkout
+if [ $? = 0 ]; then
+  echo "Checked out config.";
+  else
+    echo "Backing up pre-existing dot files.";
+    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+fi;
+config checkout
+config config status.showUntrackedFiles no
 ```
 
 *Complete bash script stored in gist - [gist.github.com/phantompunk/init.sh](https://gist.github.com/phantompunk/d9a9df62e0330663cead308cbfb7803f)*
@@ -34,7 +47,6 @@ This repo contains files in the exact location as if they lived in my home direc
 - `.gitignore`
 - `.gitconfig`
 - `.config` for other files
-  - `Brewfile` for convience
   - `fish` functions, variables, abbrievatsions and aliases
   - `kitty` settings and themes
   - `nvim` settings, keymaps, and plugins
