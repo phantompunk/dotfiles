@@ -79,7 +79,8 @@ return {
     --  define the property 'filetypes' to the map in question.
     local servers = {
       -- clangd = {},
-      -- gopls = {},
+      bashls = {},
+      gopls = {},
       pyright = {
         -- Using Ruff's import organizer
         -- disableOrganizeImports = true,
