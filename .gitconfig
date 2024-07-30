@@ -1,7 +1,7 @@
 [alias]
     co   = checkout
     cob  = checkout -b
-    cm   = commit -m
+    cm   = commit -S -m
     st   = status
     br   = branch
 
@@ -16,8 +16,6 @@
 
     # Pretty print commit logs
     lg   = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[user]
-
 [core]
     excludesfile = ~/.gitignore
     pager = diff-so-fancy | less --tabs=4 -RFX
@@ -27,3 +25,5 @@
     defaultBranch = main
 [interactive]
     diffFilter = diff-so-fancy --patch
+[commit]
+	gpgsign = true
