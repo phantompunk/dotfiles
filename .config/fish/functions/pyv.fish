@@ -6,12 +6,12 @@ function pyv --description 'Enable Python Venv or create a new one'
   end
 
   if test -d ".venv"
-    info "Python Virtual Env already exists"
-    einfo "Enabling Python Virtual Env at .venv/"
+    echo "Python Virtual Env already exists"
+    echo "Enabling Python Virtual Env at .venv/"
     # echo "enabling python virtual env at .venv/"
     source .venv/bin/activate.fish
   else
-    info "Python Virtual Env does not exist"
+    echo "Python Virtual Env does not exist"
     echo "Creating Python Virtual Env for $name"
     python3 -m venv .venv --prompt $name
     echo "Enabling Python Virtual Env"
