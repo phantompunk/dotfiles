@@ -3,6 +3,7 @@
 SETUVAR --export BAT_THEME:TwoDark
 SETUVAR --export GO111MODULE:on
 SETUVAR --export --path GOPATH:/Users/rigo/go
+SETUVAR --export PYENV_ROOT:/Users/rigo/\x2epyenv
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_k:kubectl
@@ -55,5 +56,5 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dreverse
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/opt/homebrew/sbin\x1e/opt/homebrew/bin\x1e/Applications/SnowSQL\x2eapp/Contents/MacOS\x1e/Users/rigo/go/bin\x1e/Users/rigo/\x2ecargo/bin
+SETUVAR fish_user_paths:/Users/rigo/\x2epyenv/bin\x1e/opt/homebrew/sbin\x1e/opt/homebrew/bin\x1e/Applications/SnowSQL\x2eapp/Contents/MacOS\x1e/Users/rigo/go/bin\x1e/Users/rigo/\x2ecargo/bin
 SETUVAR --export theme:dark
