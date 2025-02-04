@@ -10,7 +10,8 @@ return {
     "nvim-neotest/neotest-python",
 
     -- Installs test adapter for Go
-    { "fredrikaverpil/neotest-golang", version = "*" },
+    "nvim-neotest/neotest-go",
+    -- { "fredrikaverpil/neotest-golang", version = "*" },
   },
   opts = {
     -- Can be a list of adapters like what neotest expects,
@@ -26,7 +27,7 @@ return {
         args = { "--log-level", "DEBUG" },
         runner = "pytest",
       },
-      ["neotest-golang"] = {},
+      ["neotest-go"] = {},
     },
     status = { virtual_text = true },
     output = { open_on_run = true },
