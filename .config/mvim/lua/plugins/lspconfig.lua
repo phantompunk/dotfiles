@@ -146,11 +146,8 @@ return {
       local servers = {
         gopls = {},
         pyright = {},
-        tailwindcss = {},
+        html = {},
         lua_ls = {
-          -- cmd = { ... },
-          -- filetypes = { ... },
-          -- capabilities = {},
           settings = {
             Lua = {
               completion = {
@@ -220,7 +217,6 @@ return {
         lua = { "stylua" },
         python = { "ruff_fix", "ruff_format" },
         go = { "gofmt", "goimports" },
-        html = { "prettierd" },
       },
     },
   },
