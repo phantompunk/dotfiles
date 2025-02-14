@@ -7,7 +7,7 @@ return {
       local lint = require("lint")
       lint.linters_by_ft = {
         markdown = { "markdownlint" },
-        go = { "golangcilint" },
+        -- go = { "golangcilint" },
         python = { "ruff" },
       }
 

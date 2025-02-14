@@ -25,7 +25,7 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
 
       -- Useful status updates for LSP.
-      { "j-hui/fidget.nvim",       opts = {} },
+      { "j-hui/fidget.nvim", opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
       "hrsh7th/cmp-nvim-lsp",
@@ -146,7 +146,7 @@ return {
       local servers = {
         gopls = {},
         pyright = {},
-
+        tailwindcss = {},
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -220,6 +220,7 @@ return {
         lua = { "stylua" },
         python = { "ruff_fix", "ruff_format" },
         go = { "gofmt", "goimports" },
+        html = { "prettierd" },
       },
     },
   },
