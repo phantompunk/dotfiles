@@ -147,6 +147,7 @@ return {
         gopls = {},
         pyright = {},
         html = {},
+        tailwindcss = {},
         lua_ls = {
           settings = {
             Lua = {
