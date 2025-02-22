@@ -2,7 +2,6 @@ require("keymaps")
 require("options")
 require("config.lazy")
 
-print("Theme", vim.env.theme)
 -- Enable light/dark theme toggle
 local theme = vim.env.theme == "light" and "catppuccin-latte" or "snazzy"
 local ok, _ = pcall(vim.cmd, "colorscheme " .. theme)
