@@ -36,3 +36,17 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- Execute current file
 vim.keymap.set("n", "<leader>rr", ":below :term go run %<CR>", { desc = "Execute current Go file" })
+vim.keymap.set(
+  "n",
+  "<leader>rt",
+  ":below :term go test ./...<CR>",
+  -- ":below :term go test $(basename % .go)_test.go<CR>",
+  { desc = "Execute current Go file" }
+)
+
+-- vim.keymap.set(
+--   "n",
+--   "<leader>rt",
+--   ":below :term go run $(dirname %)/$(basename % .go)_test.go<CR>",
+--   { desc = "Execute current Go file" }
+--   )
