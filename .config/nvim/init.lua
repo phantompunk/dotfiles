@@ -17,6 +17,14 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Enable word wrap on Markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt.wrap = true
+  end,
+})
+
 -- Autosave files when text changes or leaving the buffer
 local function save()
   local buf = vim.api.nvim_get_current_buf()
