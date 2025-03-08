@@ -2,11 +2,16 @@ return {
   "nvim-neotest/neotest",
   dependencies = {
     "nvim-neotest/nvim-nio",
-    "mfussenegger/nvim-dap",
     "nvim-lua/plenary.nvim",
     "antoinemadec/FixCursorHold.nvim",
     "nvim-treesitter/nvim-treesitter",
+
+    -- Installs test adapter for Python
     "nvim-neotest/neotest-python",
+
+    -- Installs test adapter for Go
+    "nvim-neotest/neotest-go",
+    -- { "fredrikaverpil/neotest-golang", version = "*" },
   },
   opts = {
     -- Can be a list of adapters like what neotest expects,
@@ -21,19 +26,20 @@ return {
         },
         args = { "--log-level", "DEBUG" },
         runner = "pytest",
-      }
+      },
+      ["neotest-go"] = {},
     },
     status = { virtual_text = true },
     output = { open_on_run = true },
-    -- quickfix = {
-    --   open = function()
-    --     if pcall(require("lazyvim.util").has("trouble.nvim")) then
-    --       require("trouble").open({ mode = "quickfix", focus = false })
-    --     else
-    --       vim.cmd("copen")
-    --     end
-    --   end,
-    -- },
+    quickfix = {
+      open = function()
+        if pcall(require("lazyvim.util").has("trouble.nvim")) then
+          require("trouble").open({ mode = "quickfix", focus = false })
+        else
+          vim.cmd("copen")
+        end
+      end,
+    },
   },
   config = function(_, opts)
     local neotest_ns = vim.api.nvim_create_namespace("neotest")
