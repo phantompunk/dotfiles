@@ -43,11 +43,11 @@ return {
     "folke/todo-comments.nvim",
     event = "VimEnter",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = { },
+    opts = {},
   },
 
   -- Collection of various small independent plugins/modules
-  { 
+  {
     "echasnovski/mini.nvim",
     config = function()
       -- Examples:
@@ -62,6 +62,7 @@ return {
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require("mini.surround").setup()
+      require("mini.sessions").setup()
     end,
   },
 }
