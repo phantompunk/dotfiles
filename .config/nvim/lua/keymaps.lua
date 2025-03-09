@@ -34,6 +34,9 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnos
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
+-- Exit terminal mode
+vim.api.nvim_set_keymap("t", "<Leader><ESC>", "<C-\\><C-n>", { noremap = true })
+
 -- Execute current file
 vim.keymap.set("n", "<leader>rr", ":below :term go run %<CR>", { desc = "Execute current Go file" })
 vim.keymap.set(

@@ -62,7 +62,14 @@ return {
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require("mini.surround").setup()
-      require("mini.sessions").setup()
     end,
+  },
+
+  -- Enable automatic session management
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    opts = {
+    },
   },
 }
