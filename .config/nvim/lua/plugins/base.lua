@@ -35,6 +35,11 @@ return {
         topdelete = { text = "‾" },
         changedelete = { text = "~" },
       },
+      on_attach = function()
+        local gs = package.loaded.gitsigns
+        vim.keymap.set("n", "<leader>gp", gs.preview_hunk_inline, { desc = "Preview Hunk Inline" })
+        vim.keymap.set("n", "<leader>gtb", gs.toggle_current_line_blame, { desc = "Toggle Current Line Blame" })
+      end,
     },
   },
 
@@ -69,7 +74,6 @@ return {
   {
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    opts = {
-    },
+    opts = {},
   },
 }
