@@ -53,3 +53,5 @@ vim.keymap.set(
 --   ":below :term go run $(dirname %)/$(basename % .go)_test.go<CR>",
 --   { desc = "Execute current Go file" }
 --   )
+--
+vim.keymap.set("n", "<leader>rr", ":below :term go run %<CR>", { desc = "Execute current Go file" })
