@@ -39,7 +39,7 @@ return {
         local gs = package.loaded.gitsigns
         vim.keymap.set("n", "<leader>gp", gs.preview_hunk_inline, { desc = "Preview Hunk Inline" })
         vim.keymap.set("n", "<leader>gtb", gs.toggle_current_line_blame, { desc = "Toggle Current Line Blame" })
-        vim.keymap.set("n", "<leader>gr", gs.reset_hunk, { desc = "Reset current hunk" })
+        vim.keymap.set("n", "<leader>gR", gs.reset_hunk, { desc = "Reset current hunk" })
       end,
     },
   },
