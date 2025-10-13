@@ -9,10 +9,9 @@ return {
       { "fredrikaverpil/neotest-golang", version = "*" },
     },
     config = function()
-      local neotest_golang_opts = {} -- Specify custom configuration
       require("neotest").setup({
         adapters = {
-          require("neotest-golang")(neotest_golang_opts), -- Registration
+          require("neotest-golang"), -- Registration
         },
       })
     end,

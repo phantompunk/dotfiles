@@ -21,29 +21,6 @@ return {
     "kevinhwang91/nvim-ufo",
     dependencies = { "kevinhwang91/promise-async" },
     event = "BufRead",
-    keys = {
-      {
-        "zR",
-        function()
-          require("ufo").openAllFolds()
-        end,
-      },
-      {
-        "zM",
-        function()
-          require("ufo").closeAllFolds()
-        end,
-      },
-      {
-        "K",
-        function()
-          local winid = require("ufo").peekFoldedLinesUnderCursor()
-          if not winid then
-            vim.lsp.buf.hover()
-          end
-        end,
-      },
-    },
     config = function()
       vim.o.foldcolumn = "0"
       vim.o.foldlevel = 99
@@ -54,6 +31,8 @@ return {
       require("ufo").setup({
         close_fold_kinds = { "imports" },
       })
+      vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+      vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
     end,
   },
   -- Main LSP Configuration

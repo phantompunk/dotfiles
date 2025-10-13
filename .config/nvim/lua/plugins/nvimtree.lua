@@ -18,7 +18,10 @@ return {
         group_empty = true,
       },
       filters = {
-        dotfiles = true,
+        dotfiles = false,
+        custom = {
+          "^.git$",
+        },
       },
     })
     vim.keymap.set("n", "<S-D-e>", ":NvimTreeFindFileToggle<CR>", {})
