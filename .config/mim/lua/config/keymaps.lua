@@ -1,8 +1,5 @@
 -- Basic Keymaps
 
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = " "
-
 -- Move highlighted lines up/down
 vim.keymap.set("v", "∆", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "˚", ":m '<-2<CR>gv=gv")
@@ -69,3 +66,7 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnos
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics [Q]uickfix list" })
 
+-- LSP keymaps
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: Go to definition" })
+vim.keymap.set("n", "rn", vim.lsp.buf.type_definition, { desc = "LSP: Go to definition" })
+vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format , { desc = "[C]ode [F]ormat" })
