@@ -1,9 +1,9 @@
 return {
-  { 
+  {
     "connorholyday/vim-snazzy",
     name = "snazzy",
     lazy = false,
-    priority = 1000, 
+    priority = 1000,
     config = function()
       -- Enable light/dark theme toggle
       local theme = vim.env.theme == "light" and "catppuccin-latte" or "snazzy"

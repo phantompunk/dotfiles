@@ -1,3 +1,29 @@
+-- local completion_enabled = true
+--
+-- local function toggle_completion()
+-- 	completion_enabled = not completion_enabled
+--
+-- 	if completion_enabled then
+-- 		require('blink.cmp').show()
+-- 		vim.notify("Completion enabled", vim.log.levels.INFO)
+-- 	else
+-- 		require('blink.cmp').hide()
+-- 		vim.notify("Completion disabled", vim.log.levels.WARN)
+-- 	end
+-- end
+
+-- Toggle state
+-- CMP_enabled = true
+-- local function toggle_cmp()
+-- 	cmp_enabled = not cmp_enabled
+-- 	vim.b.completion = cmp_enabled
+-- 	-- cmp.setup({ enabled = cmp_enabled })
+-- 	if cmp_enabled then
+-- 		vim.notify("nvim-cmp enabled", vim.log.levels.INFO)
+-- 	else
+-- 		vim.notify("nvim-cmp disabled", vim.log.levels.WARN)
+-- 	end
+-- end
 -- Enable light/dark theme toggle
 -- local theme = vim.env.theme == "light" and "catppuccin-latte" or "snazzy"
 -- local ok, _ = pcall(vim.cmd, "colorscheme " .. theme)

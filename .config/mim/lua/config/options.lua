@@ -1,8 +1,5 @@
 -- Options 
 
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = " "
-
 -- Basic Settings
 vim.wo.number = true -- Make line numbers default
 vim.opt.wrap = false -- Disable line wrapping
@@ -16,8 +13,8 @@ vim.opt.termguicolors = true -- optionally enable 24-bit colour
 
 -- Indentation 
 vim.o.tabstop = 2 -- Number of spaces that tab uses
-vim.o.softtabstop = 2 -- Number of spaces that tab uses in insert mode
 vim.o.shiftwidth = 2 -- Number of spaces used for auto indent
+vim.o.softtabstop = 2 -- Number of spaces that tab uses in insert mode
 vim.o.expandtab = true -- Insert spaces instead of tab
 vim.o.breakindent = true -- Enable break indent
 
@@ -26,10 +23,10 @@ vim.o.mouse = "a" -- Enable mouse mode
 vim.opt.backspace = "indent,eol,start"
 
 -- File handling
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.errorbells = false
-vim.opt.swapfile = false
+vim.opt.backup = false -- Disable backup files
+vim.opt.writebackup = false -- Disable backup files
+vim.opt.errorbells = false -- Disable error bells
+vim.opt.swapfile = false -- Disable swap files
 vim.opt.undofile = true -- Save undo history
 vim.opt.updatetime = 250 -- Decrease update time
 vim.opt.timeoutlen = 300 -- Time to wait for a mapped sequence (ms)
@@ -45,5 +42,5 @@ vim.o.ignorecase = true -- Ignore case in search patterns
 vim.o.completeopt = "menuone,noselect"
 
 vim.g.loaded_netrw = 1 -- disable netrw
-vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrwPlugin = 1 -- disable netrw
 
