@@ -1,10 +1,10 @@
 return {
   {
-    -- Highlight, edit, and navigate code
+    -- highlight, edit, and navigate code
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
     build = ":TSUpdate",
-    main = "nvim-treesitter.configs", -- Sets main module to use for opts
+    main = "nvim-treesitter.configs",
     opts = {
       ensure_installed = {
         "bash",
@@ -27,14 +27,14 @@ return {
         "vimdoc",
         "yaml",
       },
-      -- Autoinstall languages that are not installed
+      -- autoinstall languages that are not installed
       auto_install = false,
-      -- Install languages synchronously (only applied to `ensure_installed`)
+      -- install languages synchronously (only applied to `ensure_installed`)
       sync_install = false,
       highlight = {
         enable = true,
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
+        -- some languages depend on vim's regex highlighting system (such as ruby) for indent rules.
+        --  if you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { "ruby" },
       },
@@ -42,4 +42,3 @@ return {
     },
   },
 }
-

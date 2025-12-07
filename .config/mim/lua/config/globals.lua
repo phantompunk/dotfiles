@@ -7,3 +7,5 @@ vim.g.cmp_enabled = true
 
 -- Disable Copilot by default
 vim.g.copilot_enabled = false
+
+vim.g.lsp_handlers_enabled = false
