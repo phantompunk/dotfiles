@@ -1,17 +1,26 @@
 return {
   {
-    "connorholyday/vim-snazzy",
-    name = "snazzy",
-    lazy = false,
+    "folke/tokyonight.nvim",
     priority = 1000,
-    config = function()
-      -- Enable light/dark theme toggle
-      local theme = vim.env.theme == "light" and "catppuccin-latte" or "snazzy"
-      local ok, _ = pcall(vim.cmd, "colorscheme " .. theme)
-      if not ok then
-        vim.notify("Failed to load colorscheme: " .. theme, vim.log.levels.WARN)
-      end
-    end
+    style = "night",       -- storm, moon, night, day
+    transparent = false,
+    terminal_colors = true,
+    styles = {
+      comments = { italic = true },
+      keywords = { italic = true },
+      functions = {},
+      variables = {},
+    },
   },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+    "connorholyday/vim-snazzy",
+    lazy = true,
+    name = "snazzy",
+    priority = 1000,
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
+  },
 }
