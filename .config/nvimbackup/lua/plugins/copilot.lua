@@ -1,17 +1,19 @@
+-- return {}
 return {
   "github/copilot.vim",
-  event = "InsertEnter",
   config = function()
+    -- Your existing Copilot config here
+    vim.g.copilot_enabled = false
     -- Add the toggle keymap
     vim.keymap.set("n", "<leader>cp", function()
-      vim.g.copilot_enabled = not vim.g.copilot_enabled
-
-      if vim.g.copilot_enabled then
+      if vim.g.copilot_enabled == false then
         vim.cmd("Copilot enable")
+        vim.g.copilot_enabled = true
         vim.notify("Copilot enabled", vim.log.levels.INFO)
       else
         vim.cmd("Copilot disable")
-        vim.notify("Copilot disabled", vim.log.levels.WARN)
+        vim.g.copilot_enabled = false
+        vim.notify("Copilot disabled", vim.log.levels.INFO)
       end
     end, { desc = "Toggle Copilot" })
   end,
