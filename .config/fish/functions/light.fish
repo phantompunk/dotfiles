@@ -1,9 +1,9 @@
 function light --description 'Enables a light theme for Fish, Nvim, and Kitty'
   # Set theme for Nvim
-  set -xU THEME light
+  set -gx THEME light
 
   # Set theme for Bat
-  set -xU BAT_THEME "OneHalfLight"
+  set -gx BAT_THEME "OneHalfLight"
 
   # Set theme for Kitty
   kitty +kitten themes Catppuccin-Latte 
