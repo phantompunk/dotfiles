@@ -8,7 +8,6 @@ function pyv --description 'Enable Python Venv or create a new one'
   if test -d ".venv"
     echo "Python Virtual Env already exists"
     echo "Enabling Python Virtual Env at .venv/"
-    # echo "enabling python virtual env at .venv/"
     source .venv/bin/activate.fish
   else
     echo "Python Virtual Env does not exist"
@@ -18,17 +17,3 @@ function pyv --description 'Enable Python Venv or create a new one'
     source .venv/bin/activate.fish
   end
 end
-# function pyv --wraps='python3 -m venv .venv --prompt dev' --description 'alias pyv=python3 -m venv .venv --prompt dev'
-#   # If .venv exists then source it
-#   set name $argv
-#   if test -z "$name"
-#     set name "dev"
-#   end
-#
-#   echo "Creating Python Virtual Env for $name"
-#   python3 -m venv .venv --prompt $name
-#   
-#   set venv_path .venv/bin/activate.fish
-#   echo "Enabling Virtual Env at $venv_path"
-#   source $venv_path 
-# end

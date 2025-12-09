@@ -1,13 +1,14 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+
+    # Added for `pyenv`
+    if command -q pyenv
+        pyenv init - | source
+    end
+
+    # Added for 'zoxide'
+    if command -q pyenv
+        zoxide init fish | source
+    end
 end
 
-# Created by `pipx` on 2022-08-15 09:46:54
-set PATH $PATH /Users/rodrigomoran/.local/bin
-
-# Added for `pyenv`
-pyenv init - | source
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/rodrigomoran/.rd/bin"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

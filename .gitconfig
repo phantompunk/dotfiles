@@ -19,7 +19,11 @@
 [user]
     name = Rodrigo Moran
     email = rigo.moran0@gmail.com
-    signingkey = 81C0DA8251DD510F
+    signingkey = ssh-ed25519 
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [core]
     excludesfile = ~/.gitignore
     pager = diff-so-fancy | less --tabs=4 -RFX
