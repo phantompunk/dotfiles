@@ -1,4 +1,4 @@
--- Options 
+-- Options
 
 -- Basic Settings
 vim.wo.number = true -- Make line numbers default
@@ -10,13 +10,18 @@ vim.opt.relativenumber = true -- Lines numbers are relative to cursor
 -- Visual Settings
 vim.opt.termguicolors = true -- optionally enable 24-bit colour
 
-
--- Indentation 
+-- Indentation Settings
 vim.o.tabstop = 2 -- Number of spaces that tab uses
 vim.o.shiftwidth = 2 -- Number of spaces used for auto indent
 vim.o.softtabstop = 2 -- Number of spaces that tab uses in insert mode
 vim.o.expandtab = true -- Insert spaces instead of tab
 vim.o.breakindent = true -- Enable break indent
+
+-- Fold Settings
+vim.o.foldcolumn = "0" -- Show fold column
+vim.o.foldlevel = 99 -- Open all folds by default
+vim.o.foldlevelstart = 99 -- Open all folds by default
+vim.o.foldenable = true -- Enable folding
 
 -- Behavior settings
 vim.o.mouse = "a" -- Enable mouse mode
@@ -43,4 +48,3 @@ vim.o.completeopt = "menuone,noselect"
 
 vim.g.loaded_netrw = 1 -- disable netrw
 vim.g.loaded_netrwPlugin = 1 -- disable netrw
-
