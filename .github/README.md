@@ -1,14 +1,14 @@
 # :wrench: dotfiles
 
-Intended to provide a friendly crossplatform expierence using Fish, Kitty, and Homebrew, compatible with macOS and Linux. No symlinking or extra tooling required.
+Personal configuration files for a modern macOS/Linux development environment. Built around Fish shell, Neovim, and Kitty terminal, with no symlinking or extra tooling required.
+
+This repository focuses on **configuration** and relies on [phantompunk/machine](https://github.com/phantompunk/machine), which handles the installation of applications and software packages.
 
 
 
-> A mashup of ideas from various sources such [zellwk](https://github.com/zellwk/dotfiles), [sobolevn](https://github.com/sobolevn/dotfiles), [mathiasbynens](https://github.com/mathiasbynens/dotfiles), [rkalis](https://github.com/rkalis/dotfiles), and [durdn](https://bitbucket.org/durdn/cfg.git). The structure for these dotfiles is from durdn's great write up on [dotfiles](https://www.atlassian.com/git/tutorials/dotfiles).
+> Inspired by [zellwk](https://github.com/zellwk/dotfiles), [sobolevn](https://github.com/sobolevn/dotfiles), [mathiasbynens](https://github.com/mathiasbynens/dotfiles), [rkalis](https://github.com/rkalis/dotfiles), and [durdn](https://bitbucket.org/durdn/cfg.git). The bare repository approach is from durdn's excellent write-up on [dotfiles](https://www.atlassian.com/git/tutorials/dotfiles).
 
-
-
-![Kitty terminal running fish examples](https://i.imgur.com/krmLPeY.png)
+![Kitty terminal running fish examples](https://i.imgur.com/VlKEn2q.png)
 
 ## Quick start
 
@@ -38,70 +38,117 @@ config config status.showUntrackedFiles no
 
 ## How it works
 
-Symlinking and extra tooling is avoided by cloning a [bare git repository](https://www.saintsjd.com/2011/01/what-is-a-bare-git-repository/) to your home directory. Dotfiles and configuration files are right where they are intended to be. Read this for more info on using [bare repos for Dotfiles](https://www.atlassian.com/git/tutorials/dotfiles).
+This setup avoids symlinking and extra tooling by using a [bare git repository](https://www.saintsjd.com/2011/01/what-is-a-bare-git-repository/) cloned to your home directory. Dotfiles and configuration files live exactly where they're intended to be. Learn more about this approach: [Bare repos for Dotfiles](https://www.atlassian.com/git/tutorials/dotfiles).
 
+Files are stored in their actual home directory locations:
 
+### Git Configuration
+- `.gitconfig` - Git aliases, SSH signing keys, and settings
+- `.gitignore` - Global ignore patterns for macOS, VSCode, secrets, etc
 
-This repo contains files in the exact location as if they lived in my home directory, that is because they will.
+### Shell: Fish (`.config/fish/`)
+- **conf.d/** - Auto-loaded configurations
+- **functions/** - Custom utility functions
+- **completions/** - Command completion definitions
 
-- `.gitignore`
-- `.gitconfig`
-- `.config` for other files
-  - `fish` functions, variables, abbrievatsions and aliases
-  - `kitty` settings and themes
-  - `nvim` settings, keymaps, and plugins
+### Editor: Neovim (`.config/nvim/`)
+- Lua-based configuration using lazy.nvim
+- **Plugins**: LSP, Telescope, Treesitter, nvim-tree, Copilot, neotest, whichkey, snacks
+- Custom keymaps, options, and autocommands
+
+### Terminal: Kitty (`.config/kitty/`)
+- Multiple theme configurations (Catppuccin Latte, Snazzy, Tokyo Night)
+- Custom terminal behavior settings
+
+### Keyboard: Karabiner (`.config/karabiner/`)
+- Custom key mappings and keyboard shortcuts
 
 
 
 ## Install
 
-For fresh installs there are a few requirements.
+### Prerequisites
 
-All platforms need `git`, `curl`, and `nvim`.
+First, install applications and tools using [phantompunk/machine](https://github.com/phantompunk/machine). That repository handles:
+- Fish shell
+- Neovim
+- Kitty terminal
+- Karabiner-Elements
+- Git and git tools (diff-so-fancy)
+- Modern CLI tools (eza, bat, zoxide, fd, ripgrep)
+- Language tooling (pyenv, Go, Deno, Node.js)
+- Homebrew package manager
 
-### MacOS
+### System Requirements
 
-```
+All platforms need `git`, `curl`, and `nvim` as a minimum.
+
+#### macOS
+
+```bash
 sudo softwareupdate -i -a
 xcode-select --install
 ```
 
+#### Linux (Debian/Ubuntu)
 
-
-### Linux (Debian)
-
-```
+```bash
 apt update -y
-apt install -y build-essential
+apt install -y build-essential git curl
 ```
 
 
 
 ## Usage
 
-```shell
-touch ~/.vimrc
+### Managing Dotfiles
+
+The `config` command is an alias for git that operates on your dotfiles:
+
+```bash
+# Check status of tracked dotfiles
 config status
-config add ~/.vimrc
-config commit -m "fix: update vim settings"
+
+# Add a new configuration file
+config add ~/.config/fish/functions/mynewfunction.fish
+
+# Commit changes
+config commit -m "feat: add new fish function"
+
+# Push to remote
 config push
+
+# View changes
+config diff
+
+# Pull updates
+config pull --rebase
 ```
 
+### Light/Dark Theme Switching
 
+Switch between light and dark themes across Kitty, Neovim, and bat:
 
-## :hammer_and_wrench: Toolset
+```fish
+# Switch to dark mode
+dark
+# Switch to light mode
+light
+```
 
-My current favorite tools I expect on every machine I use:
+## Customization
 
-### Shell: Fish Shell :fish:
+### Personal Information
 
-### Package Manager: Homebrew :beer:
+Update your details in `.gitconfig`:
+- Name and email (lines 20-21)
+- SSH signing key (line 22)
+- Signing program path (line 26)
 
-### Terminal: Kitty :cat2:
+### Theme Preferences
 
-### Apps
-
-1. **[bat](https://github.com/sharkdp/bat)** - A cat clone with syntax highlighting
-
-2. **[exa](https://github.com/ogham/exa)** - A ls replacement with hightlighting
-
+Set default theme in `.config/fish/conf.d/env.fish`:
+```fish
+set -gx THEME dark  # Options: "dark" or "light"
+set -gx BAT_THEME TwoDark  # Or "OneHalfLight" for light theme
+```
