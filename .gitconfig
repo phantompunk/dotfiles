@@ -19,7 +19,7 @@
 [user]
     name = Rodrigo Moran
     email = rigo.moran0@gmail.com
-    signingkey = ssh-ed25519 
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHkC6wOAOw/JOp/QfDvKJGfhcgX692APonP2NcSqO1Ek
 [gpg]
   format = ssh
 [gpg "ssh"]
