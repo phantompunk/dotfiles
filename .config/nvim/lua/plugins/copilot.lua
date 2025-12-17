@@ -2,9 +2,10 @@ return {
 	"github/copilot.vim",
 	event = "InsertEnter",
 	config = function()
+		vim.cmd("Copilot disable")
+
 		-- Add the toggle keymap
 		vim.keymap.set("n", "<leader>cp", function()
-
 			if vim.fn["copilot#Enabled"]() == 1 then
 				vim.cmd("Copilot disable")
 				vim.notify("Copilot disabled", vim.log.levels.WARN)
