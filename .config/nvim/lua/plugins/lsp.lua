@@ -29,7 +29,20 @@ return {
 	},
 
 	-- Mason package manager for LSP servers, DAP servers, linters and formatters
-	{ "mason-org/mason.nvim", opts = {} },
+	{
+		"mason-org/mason.nvim",
+		opts = {
+			-- Only use GitHub releases registry, disable package manager-based sources
+			registries = {
+				"github:mason-org/mason-registry",
+			},
+			-- Disable pip, npm, gem, etc. if not needed
+			providers = {
+				"mason.providers.registry-api",
+				"mason.providers.client",
+			},
+		},
+	},
 	{
 		"mason-org/mason-lspconfig.nvim",
 		opts = {
