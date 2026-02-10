@@ -3,6 +3,7 @@
   "LazyVim": { "branch": "main", "commit": "c64a61734fc9d45470a72603395c02137802bc6f" },
   "blink.cmp": { "branch": "main", "commit": "b19413d214068f316c78978b08264ed1c41830ec" },
   "catppuccin": { "branch": "main", "commit": "beaf41a30c26fd7d6c386d383155cbd65dd554cd" },
+  "conform.nvim": { "branch": "master", "commit": "c2526f1cde528a66e086ab1668e996d162c75f4f" },
   "copilot.vim": { "branch": "release", "commit": "a12fd5672110c8aa7e3c8419e28c96943ca179be" },
   "gitsigns.nvim": { "branch": "main", "commit": "abf82a65f185bd54adc0679f74b7d6e1ada690c9" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },

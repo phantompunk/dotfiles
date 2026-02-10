@@ -20,6 +20,11 @@ return {
 			"mason-org/mason.nvim",
 			"mason-org/mason-lspconfig.nvim",
 		},
+		opts = {
+			servers = {
+				biome = false,
+			},
+		},
 		config = function()
 			vim.lsp.enable({
 				"gopls",
@@ -51,6 +56,39 @@ return {
 				"gopls",
 				"pyright",
 				"ruff",
+				"tailwindcss",
+			},
+		},
+	},
+
+	{
+		"stevearc/conform.nvim",
+		event = { "BufWritePre" },
+		cmd = { "ConformInfo" },
+		opts = {
+			-- formatters per language
+			formatters_by_ft = {
+				javascript = { "biome" },
+				typescript = { "biome" },
+				javascriptreact = { "biome" },
+				typescriptreact = { "biome" },
+				json = { "biome" },
+				html = { "biome" },
+				css = { "biome" },
+				scss = { "biome" },
+				-- lua = { "stylua" },
+				-- go = { "goimports", "gofumpt" },
+				-- sh = { "shfmt" },
+				-- bash = { "shfmt" },
+				-- zsh = { "shfmt" },
+				-- ["_"] = { "trim_whitespace" },
+			},
+
+			-- formatter behavior tuning
+			formatters = {
+				biome = {
+					require_cwd = true, -- only run if biome.json present
+				},
 			},
 		},
 	},
@@ -122,7 +160,7 @@ return {
 
 			-- Pass to LSP servers
 			require("lspconfig.util").default_config.capabilities =
-				vim.tbl_deep_extend("force", require("lspconfig.util").default_config.capabilities, capabilities)
+					vim.tbl_deep_extend("force", require("lspconfig.util").default_config.capabilities, capabilities)
 
 			require("ufo").setup(opts)
 

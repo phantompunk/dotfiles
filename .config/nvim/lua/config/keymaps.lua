@@ -53,7 +53,13 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]oto [D]efinition" })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
-vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "[C]ode [F]ormat" })
+vim.keymap.set("n", "<leader>cf", function()
+	require("conform").format({
+		async = true,
+		lsp_fallback = true,
+	})
+end, { desc = "[C]ode [F]ormat" })
+
 vim.keymap.set("n", "<leader>ci", function()
 	vim.lsp.buf.code_action({
 		apply = true,
